@@ -30,6 +30,7 @@ function cadastrarCliente(req, res) {
     });
 };
 
+//não funcional
 function excluirCliente(req, res) {
     let query = `DELETE FROM clientes WHERE id_cliente = ${req.body.id_cliente}`;
 
@@ -42,6 +43,7 @@ function excluirCliente(req, res) {
     });
 };
 
+//não funcional
 function editarCliente(req, res){
     let query = `UPDATE clientes SET id_cliente = ${req.body}`;
 

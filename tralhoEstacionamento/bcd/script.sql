@@ -13,7 +13,7 @@ create table clientes(
 create table telefones(
     id_cliente integer not null,
     telefone varchar(15) not null, 
-    foreign key (id_cliente) references clientes(id_cliente)
+    foreign key (id_cliente) references clientes(id_cliente) on delete cascade
 );
 
 create table carros(
@@ -24,7 +24,7 @@ create table carros(
     modelo varchar(30) not null,
     cor varchar(15) not null,
     descricao varchar(50) not null,
-    foreign key (id_cliente) references clientes(id_cliente)
+    foreign key (id_cliente) references clientes(id_cliente) on delete cascade
 );
 
 create table registro(

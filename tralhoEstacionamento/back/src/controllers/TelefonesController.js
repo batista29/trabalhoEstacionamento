@@ -18,6 +18,30 @@ function listarTelefones(req, res) {
     })
 };
 
+function cadastrarTelefones(req, res) {
+    let query = `INSERT INTO telefones VALUES (${req.body.id_cliente}, ${req.body.telefone})`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.status(201).json(req.body).end();
+        }else {
+            res.status(400).json(err).end();
+        }
+    });
+};
+
+function editarTelefones(req, res){
+    let query = `UPDATE telefones SET telefone = ${req.body.telefone}, telefone = ${req.body.telefone} where id_cliente = ${req.body.id_cliente}`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.status(200).json(req.body).end();
+        }else {
+            res.status(400).json(err).end();
+        }
+    });
+};
+
 function excluirTelefones(req, res) {
     let query = `DELETE FROM telefones WHERE telefone = ${req.body.telefone}`;
 
@@ -32,5 +56,7 @@ function excluirTelefones(req, res) {
 
 module.exports = {
     listarTelefones,
-    excluirTelefones
+    excluirTelefones,
+    editarTelefones,
+    cadastrarTelefones
 }
