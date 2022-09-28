@@ -10,6 +10,7 @@ create table clientes(
     bairro varchar(30) not null
 );
 
+-- "on delete cascade" para quando eliminar-mos algum cliente, as informações do mesmo também serem excluidas
 create table telefones(
     id_cliente integer not null,
     telefone varchar(15) not null, 
