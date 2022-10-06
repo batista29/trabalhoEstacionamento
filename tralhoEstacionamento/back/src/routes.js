@@ -7,6 +7,8 @@ const TelefonesCliController = require("./controllers/TelefonesCliController");
 const TelefonesFuncController = require("./controllers/TelefonesFuncController");
 const CarrosController = require("./controllers/CarrosController");
 
+//falta controller funcionario
+
 router.get("/clientes", ClientesController.listarClientes);
 router.post("/clientes", ClientesController.cadastrarCliente);
 router.delete("/clientes", ClientesController.excluirCliente);
