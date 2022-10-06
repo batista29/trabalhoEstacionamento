@@ -78,13 +78,6 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/telefonesFunc.csv'
-INTO TABLE telefonesFunc
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
-
 LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
@@ -94,6 +87,13 @@ IGNORE 1 ROWS;
 
 LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/funcionarios.csv'
 INTO TABLE funcionarios
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/telefonesFunc.csv'
+INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'

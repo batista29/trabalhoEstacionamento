@@ -7,7 +7,7 @@ const conDB = mysql.createConnection({
 });
 
 function listarTelefones(req, res) {
-    let query = "SELECT * FROM telefonesFunc ORDER BY id_cliente asc";
+    let query = "SELECT * FROM telefonesFunc ORDER BY id_func asc";
 
     conDB.query(query, (err, result) => {
         if(err == null) {
