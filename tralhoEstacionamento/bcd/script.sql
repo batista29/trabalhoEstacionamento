@@ -2,6 +2,7 @@ drop database if exists estacionamento;
 create database estacionamento charset=UTF8 collate UTF8_general_ci;
 use estacionamento;
 
+-- OK
 create table clientes(
     id_cliente integer not null primary key auto_increment,
     nome_cli varchar(30) not null,
@@ -15,6 +16,7 @@ create table clientes(
     municipio varchar(30) not null
 );
 
+-- OK
 create table funcionarios(
     id_func integer not null primary key auto_increment,
     nome_func varchar(30) not null,
@@ -29,6 +31,7 @@ create table funcionarios(
     municipio varchar(30) not null
 );
 
+-- OK
 -- "on delete cascade" para quando eliminar-mos algum cliente, as informações do mesmo também serem excluidas
 create table telefonesCli(
     id_cliente integer null,
@@ -36,12 +39,14 @@ create table telefonesCli(
     foreign key (id_cliente) references clientes(id_cliente) on delete cascade
 );
 
+-- OK
 create table telefonesFunc(
     id_func integer null,
     telefone varchar(15), 
     foreign key (id_func) references funcionarios(id_func) on delete cascade
 );
 
+-- OK
 create table carros(
     id_cliente integer not null,
     id_carro integer not null primary key auto_increment,
