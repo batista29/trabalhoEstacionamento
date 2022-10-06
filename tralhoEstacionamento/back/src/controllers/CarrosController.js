@@ -31,7 +31,7 @@ function cadastrarCarros(req, res) {
 };
 
 function excluirCarros(req, res) {
-    let query = `DELETE FROM carros WHERE placa = '${req.body.placa}'`;
+    let query = `DELETE FROM carros WHERE id_carro = '${req.body.id_carro}'`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {

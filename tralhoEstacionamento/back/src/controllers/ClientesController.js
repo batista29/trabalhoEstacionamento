@@ -45,7 +45,7 @@ function excluirCliente(req, res) {
 
 //não funcional
 function editarCliente(req, res){
-    let query = `UPDATE clientes SET id_cliente = ${req.body}`;
+    let query = `UPDATE clientes SET id_cliente = ${req.body.id_cliente}`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
