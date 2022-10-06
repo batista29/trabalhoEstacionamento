@@ -19,6 +19,7 @@ create table telefones(
 
 create table carros(
     id_cliente integer not null,
+    id_carro integer not null primary key auto_increment,
     placa varchar(8) not null,
     tipo varchar(15) not null,
     marca varchar(15) not null,
