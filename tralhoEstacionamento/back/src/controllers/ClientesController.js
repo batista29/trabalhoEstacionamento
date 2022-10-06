@@ -30,7 +30,7 @@ function cadastrarCliente(req, res) {
     });
 };
 
-//não funcional
+
 function excluirCliente(req, res) {
     let query = `DELETE FROM clientes WHERE id_cliente = ${req.body.id_cliente}`;
 

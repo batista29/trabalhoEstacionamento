@@ -38,21 +38,21 @@ create table registro(
     foreign key (id_carro) references carros(id_carro)
 );
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/clientes.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/telefones.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/carros.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
