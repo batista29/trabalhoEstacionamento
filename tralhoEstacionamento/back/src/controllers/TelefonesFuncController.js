@@ -7,7 +7,7 @@ const conDB = mysql.createConnection({
 });
 
 function listarTelefones(req, res) {
-    let query = "SELECT * FROM telefones";
+    let query = "SELECT * FROM telefonesFunc ORDER BY id_cliente asc";
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -19,7 +19,7 @@ function listarTelefones(req, res) {
 };
 
 function cadastrarTelefones(req, res) {
-    let query = `INSERT INTO telefones VALUES (${req.body.id_cliente}, ${req.body.telefone})`;
+    let query = `INSERT INTO telefonesFunc VALUES (${req.body.id_cliente}, ${req.body.telefone})`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -31,7 +31,7 @@ function cadastrarTelefones(req, res) {
 };
 
 function editarTelefones(req, res){
-    let query = `UPDATE telefones SET telefone = ${req.body.telefone}, telefone = ${req.body.telefone} where id_cliente = ${req.body.id_cliente}`;
+    let query = `UPDATE telefonesFunc SET telefone = ${req.body.telefone}, telefone = ${req.body.telefone} where id_cliente = ${req.body.id_cliente}`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -43,7 +43,7 @@ function editarTelefones(req, res){
 };
 
 function excluirTelefones(req, res) {
-    let query = `DELETE FROM telefones WHERE telefone = ${req.body.telefone}`;
+    let query = `DELETE FROM telefonesFunc WHERE telefone = ${req.body.telefone}`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {

@@ -6,8 +6,8 @@ const conDB = mysql.createConnection({
     "database": "estacionamento"
 });
 
-function listarCarros(req, res) {
-    let query = "SELECT * FROM carros ORDER BY id_cliente asc";
+function listarTelefones(req, res) {
+    let query = "SELECT * FROM telefonesCli ORDER BY id_cliente asc";
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -18,8 +18,20 @@ function listarCarros(req, res) {
     })
 };
 
-function cadastrarCarros(req, res) {
-    let query = `INSERT INTO carros VALUES (${req.body.id_cliente}, DEFAULT, '${req.body.placa}', '${req.body.tipo}', '${req.body.marca}', '${req.body.modelo}', '${req.body.cor}', '${req.body.descricao}')`;
+function cadastrarTelefones(req, res) {
+    let query = `INSERT INTO telefonesCli VALUES (${req.body.id_cliente}, ${req.body.telefone})`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.status(201).json(req.body).end();
+        }else {
+            res.status(400).json(err).end();
+        }
+    });
+};
+
+function editarTelefones(req, res){
+    let query = `UPDATE telefonesCli SET telefone = ${req.body.telefone}, telefone = ${req.body.telefone} where id_cliente = ${req.body.id_cliente}`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -30,20 +42,8 @@ function cadastrarCarros(req, res) {
     });
 };
 
-function excluirCarros(req, res) {
-    let query = `DELETE FROM carros WHERE id_carro = '${req.body.id_carro}'`;
-
-    conDB.query(query, (err, result) => {
-        if(err == null) {
-            res.status(200).json(req.body).end();
-        }else {
-            res.status(400).json(err).end();
-        }
-    });
-};
-
-function editarCarros(req, res){
-    let query = `UPDATE carros SET placa = '${req.body.placa}', id_cliente = ${req.body.id_cliente}, placa = '${req.body.placa}', tipo = '${req.body.tipo}', marca = '${req.body.marca}',  modelo = '${req.body.modelo}', cor = '${req.body.cor}', descricao = '${req.body.descricao}' where placa = '${req.body.placa}'`;
+function excluirTelefones(req, res) {
+    let query = `DELETE FROM telefonesCli WHERE telefone = ${req.body.telefone}`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -55,8 +55,8 @@ function editarCarros(req, res){
 };
 
 module.exports = {
-    listarCarros,
-    excluirCarros,
-    cadastrarCarros,
-    editarCarros
+    listarTelefones,
+    excluirTelefones,
+    editarTelefones,
+    cadastrarTelefones
 }

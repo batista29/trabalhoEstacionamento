@@ -5,16 +5,41 @@ use estacionamento;
 create table clientes(
     id_cliente integer not null primary key auto_increment,
     nome_cli varchar(30) not null,
+    email varchar (100) null,
+    data_nasc date null,
     cpf varchar (15) not null,
+    bairro varchar(30) not null,
     rua varchar(30) not null,
-    bairro varchar(30) not null
+    cep varchar(30) not null,
+    complemento varchar(30) not null,
+    municipio varchar(30) not null
+);
+
+create table funcionarios(
+    id_func integer not null primary key auto_increment,
+    nome_func varchar(30) not null,
+    email varchar (100),
+    data_nasc date,
+    cpf varchar (15) not null,
+    cargo varchar(30) not null,
+    bairro varchar(30) not null,
+    rua varchar(30) not null,
+    cep varchar(30) not null,
+    complemento varchar(30),
+    municipio varchar(30) not null
 );
 
 -- "on delete cascade" para quando eliminar-mos algum cliente, as informações do mesmo também serem excluidas
-create table telefones(
-    id_cliente integer not null,
+create table telefonesCli(
+    id_cliente integer null,
     telefone varchar(15) not null, 
     foreign key (id_cliente) references clientes(id_cliente) on delete cascade
+);
+
+create table telefonesFunc(
+    id_func integer null,
+    telefone varchar(15), 
+    foreign key (id_func) references funcionarios(id_func) on delete cascade
 );
 
 create table carros(
@@ -46,8 +71,15 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/telefones.csv'
-INTO TABLE telefones
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/telefonesCli.csv'
+INTO TABLE telefonesCli
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/telefonesFunc.csv'
+INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
@@ -55,6 +87,13 @@ IGNORE 1 ROWS;
 
 LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/carros.csv'
 INTO TABLE carros
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/csv/funcionarios.csv'
+INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
