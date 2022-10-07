@@ -19,7 +19,7 @@ function listarTelefones(req, res) {
 };
 
 function cadastrarTelefones(req, res) {
-    let query = `INSERT INTO telefonesFunc VALUES (${req.body.id_cliente}, ${req.body.telefone})`;
+    let query = `INSERT INTO telefonesFunc VALUES (${req.body.id_func}, ${req.body.telefone})`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -31,7 +31,7 @@ function cadastrarTelefones(req, res) {
 };
 
 function editarTelefones(req, res){
-    let query = `UPDATE telefonesFunc SET telefone = ${req.body.telefone}, telefone = ${req.body.telefone} where id_cliente = ${req.body.id_cliente}`;
+    let query = `UPDATE telefonesFunc SET telefone = ${req.body.telefone}, telefone = ${req.body.telefone} where id_func = ${req.body.id_func}`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
