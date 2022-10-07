@@ -2,7 +2,7 @@
 
 * Projeto em desenvolvimento ⚠️
 
-* Este é um projeto no modelo MVC (Model - View - Control), sendo desenvolvido em dupla.
+* Este é um projeto escolar sendo desenvolvido no modelo MVC (Model - View - Control),a criação está sendo feita em dupla.
 
 ## Linguagens
 
