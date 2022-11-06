@@ -1,10 +1,4 @@
-const mysql = require('mysql');
-
-const conDB = mysql.createConnection({
-    "host": "localhost",
-    "user": "root",
-    "database": "estacionamento"
-});
+const conDB = require('../dao/dbEstacionamento');
 
 function listarCarros(req, res) {
     let query = "SELECT * FROM carros ORDER BY id_cliente asc";

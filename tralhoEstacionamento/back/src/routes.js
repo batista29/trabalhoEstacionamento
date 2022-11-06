@@ -1,11 +1,11 @@
 const Express = require('express');
-
 const router = Express.Router();
 
 const ClientesController = require("./controllers/ClientesController");
 const TelefonesCliController = require("./controllers/TelefonesCliController");
 const TelefonesFuncController = require("./controllers/TelefonesFuncController");
 const CarrosController = require("./controllers/CarrosController");
+const FuncController = require("./controllers/FuncionariosController");
 
 //falta controller funcionario
 
@@ -28,5 +28,10 @@ router.get("/carros", CarrosController.listarCarros);
 router.delete("/carros", CarrosController.excluirCarros);
 router.post("/carros", CarrosController.cadastrarCarros);
 router.put("/carros", CarrosController.editarCarros);
+
+router.get("/funcionarios", FuncController.listarFuncionarios);
+router.delete("/funcionarios", FuncController.excluirFuncionarios);
+router.post("/funcionarios", FuncController.cadastrarFuncionarios);
+router.put("/funcionarios", FuncController.editarFuncionarios);
 
 module.exports = router;
