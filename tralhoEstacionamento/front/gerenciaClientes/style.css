@@ -1,21 +1,30 @@
 @import url('../global/estrutura.css');
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 body{
     font-family: 'Roboto';
 }
+=======
+
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
 .model{
     display: none;
     visibility: hidden;
 }
 
 .cont-clientes h1{
+<<<<<<< HEAD
     font-family: 'Yusei Magic';
     font-weight: 400;
+=======
+    font-family: 'Philosopher';
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
     margin: 10px;
 }
 .cont-clientes{
     margin: 20px;
+<<<<<<< HEAD
     width: 100%;
     height: 12%;
     background: #FFFFFF;
@@ -24,28 +33,56 @@ body{
 .itens-cont-clientes{
     display: flex;
     justify-content: space-around;
+=======
+    width: 80vw;
+    height: 133px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(87, 86, 86, 0.5);
+    /* filter: blur(2px); */
+}
+.itens-cont-clientes{
+    display: flex;
+
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
 }
 
 /* BOTAO DE CASDASTRO DE CLIENTE */
 
 .btnCli{
+<<<<<<< HEAD
     width: 20%;
     height: 100%;
     background: #6C117B;
     border-radius: 3px;
     border: 1px solid #6C117B;
+=======
+    width: 170px;
+    height: 33px;
+    background: #14A4D1;
+    border-radius: 10px;
+    border: none;
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
     font-family: 'Roboto';
     font-weight: bold;
     font-size: 17px;
     text-align: center;
     color: #FFFFFF;
+<<<<<<< HEAD
     padding: 10px 10px;
+=======
+    margin-left: 10px;
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
 }
 
 .btnCli:hover{
     background-color: #FFFFFF;
+<<<<<<< HEAD
     color: #6C117B;
     border: 1px solid #6C117B;
+=======
+    color: #14A4D1;
+    border: 2px solid #14A4D1;
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
     cursor: pointer;
 }
 .btnCli i{
@@ -55,6 +92,7 @@ body{
 /* BUSCAR PELO CLIENTE */
 
 .filtro-cont-clientes{
+<<<<<<< HEAD
     text-align: center;
     align-items: center;
     display: flex;
@@ -115,4 +153,24 @@ td{
 label{
     margin-left: 10px;
     padding: 8px;
+=======
+    margin-left: 100px;
+}
+
+.filtro-cont-clientes input{
+    width: 577px;
+    height: 33px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+}
+
+.filtro-cont-clientes > .btnPesquisar{
+    width: 83px;
+    height: 33px;
+    background: #14A4D1;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    color: #fff;
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
 }

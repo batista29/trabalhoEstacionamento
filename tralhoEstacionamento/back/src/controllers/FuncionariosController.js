@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 const conDB = require('../dao/dbEstacionamento');
+=======
+const mysql = require('mysql');
+
+const conDB = mysql.createConnection({
+    "host": "localhost",
+    "user": "root",
+    "database": "estacionamento"
+});
+>>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
 
 function listarFuncionarios(req, res) {
     let query = "SELECT * FROM funcionarios ORDER BY id_func asc";
