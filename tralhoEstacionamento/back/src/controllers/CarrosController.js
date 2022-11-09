@@ -1,49 +1,42 @@
-const conDB = require('../dao/dbEstacionamento');
+const conDB = require('../dao/dbEstacionamento.js');
+const Carros = require('../models/carros')
 
-function listarCarros(req, res) {
-    let query = "SELECT * FROM carros ORDER BY id_cliente asc";
-
-    conDB.query(query, (err, result) => {
+const listarCarros = (req, res) => {
+    conDB.query(Carros.toReadAll(), (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
         }else {
-            res.json(err).status(400).end();
+            res.status(500).end();
         }
     })
 };
 
-function cadastrarCarros(req, res) {
-    let query = `INSERT INTO carros VALUES (${req.body.id_cliente}, DEFAULT, '${req.body.placa}', '${req.body.tipo}', '${req.body.marca}', '${req.body.modelo}', '${req.body.cor}', '${req.body.descricao}')`;
-
-    conDB.query(query, (err, result) => {
+const cadastrarCarros = (req, res) => {
+    conDB.query(Carros.toCreate(req.body), (err, result) => {
         if(err == null) {
-            res.status(200).json(req.body).end();
+            res.status(201).end();
+        }else {
+            res.status(500).json(err).end();
+        }
+    });
+};
+
+const excluirCarros = (req, res) => {
+    conDB.query(Carros.toDel(req.body), (err, result) => {
+        if(err == null) {
+            res.status(204).end();
         }else {
             res.status(400).json(err).end();
         }
     });
 };
 
-function excluirCarros(req, res) {
-    let query = `DELETE FROM carros WHERE id_carro = '${req.body.id_carro}'`;
-
-    conDB.query(query, (err, result) => {
+const editarCarros = (req, res) => {
+    conDB.query(Carros.toUpdate(req.body), (err, result) => {
         if(err == null) {
             res.status(200).json(req.body).end();
         }else {
-            res.status(400).json(err).end();
-        }
-    });
-};
-
-function editarCarros(req, res){
-    let query = `UPDATE carros SET placa = '${req.body.placa}', id_cliente = ${req.body.id_cliente}, placa = '${req.body.placa}', tipo = '${req.body.tipo}', marca = '${req.body.marca}',  modelo = '${req.body.modelo}', cor = '${req.body.cor}', descricao = '${req.body.descricao}' where placa = '${req.body.placa}'`;
-
-    conDB.query(query, (err, result) => {
-        if(err == null) {
-            res.status(200).json(req.body).end();
-        }else {
-            res.status(400).json(err).end();
+            res.status(500).json(err).end();
         }
     });
 };

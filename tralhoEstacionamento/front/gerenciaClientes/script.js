@@ -24,6 +24,7 @@ function listaDeClientes() {
         lista.querySelector("#compleCli").innerHTML = info.complemento;
         lista.querySelector("#muniCli").innerHTML = info.municipio;
         
+        
         lancamentos.appendChild(lista);
     })
 }

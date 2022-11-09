@@ -1,9 +1,8 @@
 const conDB = require('../dao/dbEstacionamento');
+const Telefones = require('../models/telefonesFunc')
 
 function listarTelefones(req, res) {
-    let query = "SELECT * FROM telefonesFunc ORDER BY id_func asc";
-
-    conDB.query(query, (err, result) => {
+    conDB.query(Telefones.toReadAll(), (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
         }else {
@@ -13,9 +12,7 @@ function listarTelefones(req, res) {
 };
 
 function cadastrarTelefones(req, res) {
-    let query = `INSERT INTO telefonesFunc VALUES (${req.body.id_func}, ${req.body.telefone})`;
-
-    conDB.query(query, (err, result) => {
+    conDB.query(Telefones.toCreate(req.body), (err, result) => {
         if(err == null) {
             res.status(201).json(req.body).end();
         }else {
@@ -25,9 +22,7 @@ function cadastrarTelefones(req, res) {
 };
 
 function editarTelefones(req, res){
-    let query = `UPDATE telefonesFunc SET telefone = ${req.body.telefone}, telefone = ${req.body.telefone} where id_func = ${req.body.id_func}`;
-
-    conDB.query(query, (err, result) => {
+    conDB.query(Telefones.toUpdate(req.body), (err, result) => {
         if(err == null) {
             res.status(200).json(req.body).end();
         }else {
@@ -37,9 +32,7 @@ function editarTelefones(req, res){
 };
 
 function excluirTelefones(req, res) {
-    let query = `DELETE FROM telefonesFunc WHERE telefone = ${req.body.telefone}`;
-
-    conDB.query(query, (err, result) => {
+    conDB.query(Telefones.toDel(req.body), (err, result) => {
         if(err == null) {
             res.status(200).json(req.body).end();
         }else {

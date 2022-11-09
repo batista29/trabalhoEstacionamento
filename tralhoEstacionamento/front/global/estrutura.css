@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
-=======
-
->>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
 /* font-family: 'Philosopher', sans-serif; */
 /* font-family: 'Poppins', sans-serif; */
 *{
@@ -14,7 +10,6 @@
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 .logo{
     font-family: 'Yusei Magic';
     font-size: 30px;
@@ -32,38 +27,15 @@ nav{
     padding: 1px 0px 1px 0px;
     background: #6c117b;
     margin-bottom: 10px;
-=======
-.cabecalho{
-    width: 100%;
-    height: 56px;
-    background: #7FC9E0;
-    font-family: 'Poppins';
-    font-weight: bold;
-    font-size: 43px;
-    color: #FFFFFF;
-}
-
-nav{
-    width: 250px;
-    height: 94.2vh;
-    background: #7FC9E0;
->>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
     border-radius: 0px;
 }
 
 li{
-<<<<<<< HEAD
 
     margin-bottom: 10px;
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 18px;
-=======
-    margin-bottom: 10px;
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 23px;
->>>>>>> bf15034a73c3493fe87af2ccb47992cdd0e082d6
     color: #FFFFFF;
 }
 li i {
