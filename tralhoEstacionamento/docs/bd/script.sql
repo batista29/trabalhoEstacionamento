@@ -67,35 +67,35 @@ create table registro(
     foreign key (id_carro) references carros(id_carro)
 );
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/Estacionamento/tralhoEstacionamento/docs/bd/clientes.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/Estacionamento/tralhoEstacionamento/docs/bd/telefonesCli.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/telefonesCli.csv'
 INTO TABLE telefonesCli
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/Estacionamento/tralhoEstacionamento/docs/bd/carros.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/Estacionamento/tralhoEstacionamento/docs/bd/funcionarios.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/funcionarios.csv'
 INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Ana - Senai/Estacionamento/tralhoEstacionamento/docs/bd/telefonesFunc.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/telefonesFunc.csv'
 INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -107,3 +107,19 @@ select * from telefonesCli;
 select * from carros;
 select * from funcionarios;
 select * from telefonesFunc;
+
+create table vagas(
+    id_vaga numeric(2) not null,
+    ocupada boolean
+);
+
+INSERT INTO vagas values(1,false);
+INSERT INTO vagas values(2,true);
+INSERT INTO vagas values(3,false);
+INSERT INTO vagas values(4,false);
+INSERT INTO vagas values(5,true);
+INSERT INTO vagas values(6,false);
+INSERT INTO vagas values(7,true);
+INSERT INTO vagas values(8,false);
+INSERT INTO vagas values(9,false);
+INSERT INTO vagas values(10,false);
