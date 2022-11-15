@@ -57,45 +57,36 @@ create table carros(
     foreign key (id_cliente) references clientes(id_cliente)
 );
 
-create table registro(
-    id_cliente integer not null,
-    id_carro integer not null,
-    hora_entrada time not null,
-    hora_saida time not null,
-    data DATETIME not null,
-    foreign key (id_cliente) references clientes(id_cliente),
-    foreign key (id_carro) references carros(id_carro)
-);
 
-LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/clientes.csv'
+LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/telefonesCli.csv'
+LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesCli.csv'
 INTO TABLE telefonesCli
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/carros.csv'
+LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/funcionarios.csv'
+LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/funcionarios.csv'
 INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/tralhoEstacionamento/docs/bd/telefonesFunc.csv'
+LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesFunc.csv'
 INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -110,16 +101,32 @@ select * from telefonesFunc;
 
 create table vagas(
     id_vaga numeric(2) not null,
-    ocupada boolean
+    ocupada boolean,     
+    id_carro integer not null,
+    foreign key (id_carro) references carros(id_carro)
 );
 
-INSERT INTO vagas values(1,false);
-INSERT INTO vagas values(2,true);
-INSERT INTO vagas values(3,false);
-INSERT INTO vagas values(4,false);
-INSERT INTO vagas values(5,true);
-INSERT INTO vagas values(6,false);
-INSERT INTO vagas values(7,true);
-INSERT INTO vagas values(8,false);
-INSERT INTO vagas values(9,false);
-INSERT INTO vagas values(10,false);
+INSERT INTO vagas values(1,false,2);
+INSERT INTO vagas values(2,true,1);
+
+
+create table registro(
+    id_cliente integer not null,
+    id_carro integer not null,
+    hora_entrada time not null,
+    hora_saida time not null,
+    data DATETIME not null,
+    foreign key (id_cliente) references clientes(id_cliente),
+    foreign key (id_carro) references carros(id_carro)
+);
+
+INSERT INTO registro values(1,2, "20:00:00", "21:00:00", "2003-03-03");
+INSERT INTO registro values(1,1, "20:00:00", "21:00:00", "2003-03-03");
+-- subtime para subtrair a hora
+SELECT SUBTIME("21:00:00","20:00:00");
+
+drop view if exists vw_valorHora;
+CREATE VIEW vw_valorHora AS
+SELECT r.id_carro, SUBTIME(r.hora_saida,r.hora_entrada) as "HORA", r.data, v.id_vaga, v.ocupada
+FROM registro r INNER JOIN vagas v on r.id_carro = v.id_carro;
+select * from vw_valorHora;
