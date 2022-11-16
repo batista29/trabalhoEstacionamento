@@ -30,7 +30,6 @@ create table funcionarios(
     municipio varchar(30) not null
 );
 
-
 -- "on delete cascade" para quando eliminar-mos algum cliente, as informações do mesmo também serem excluidas
 create table telefonesCli(
     id_cliente integer null,
@@ -40,7 +39,7 @@ create table telefonesCli(
 
 -- OK
 create table telefonesFunc(
-    id_func integer null,
+    id_func integer null, 
     telefone varchar(15), 
     foreign key (id_func) references funcionarios(id_func) on delete cascade
 );
@@ -54,39 +53,39 @@ create table carros(
     modelo varchar(30) not null,
     cor varchar(15) not null,
     descricao varchar(50) not null,
-    foreign key (id_cliente) references clientes(id_cliente)
+    foreign key (id_cliente) references clientes(id_cliente) on delete cascade
 );
 
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/clientes.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesCli.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesCli.csv'
 INTO TABLE telefonesCli
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/carros.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/funcionarios.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/funcionarios.csv'
 INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesFunc.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesFunc.csv'
 INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -103,7 +102,7 @@ create table vagas(
     id_vaga numeric(2) not null,
     ocupada boolean,     
     id_carro integer not null,
-    foreign key (id_carro) references carros(id_carro)
+    foreign key (id_carro) references carros(id_carro) on delete cascade
 );
 
 INSERT INTO vagas values(1,false,2);
@@ -116,13 +115,13 @@ create table registro(
     hora_entrada time not null,
     hora_saida time not null,
     data DATETIME not null,
-    foreign key (id_cliente) references clientes(id_cliente),
-    foreign key (id_carro) references carros(id_carro)
+    foreign key (id_cliente) references clientes(id_cliente) on delete cascade,
+    foreign key (id_carro) references carros(id_carro) on delete cascade
 );
 
 INSERT INTO registro values(1,2, "20:00:00", "21:00:00", "2003-03-03");
 INSERT INTO registro values(1,1, "20:00:00", "21:00:00", "2003-03-03");
-INSERT INTO registro values(1,1, "20:00:00", "21:00:00", "2003-03-03");
+INSERT INTO registro values(1,1, "20:00:00", "23:00:00", "2003-03-03");
 -- subtime para subtrair a hora
 SELECT SUBTIME("21:00:00","20:00:00");
 

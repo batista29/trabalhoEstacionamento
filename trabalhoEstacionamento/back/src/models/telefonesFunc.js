@@ -1,17 +1,17 @@
 const toCreate  = (model) =>{
-    return `INSERT INTO telefonesCli VALUES (${model.id_cliente}, ${model.telefone})`;
+    return `INSERT INTO telefonesFunc VALUES (${model.id_func}, ${model.telefone})`;
 }
 
 const toReadAll = () => {
-return "SELECT * FROM telefonesCli ORDER BY id_cliente asc"
+return "SELECT * FROM telefonesFunc ORDER BY id_func asc"
 }
 
 const toDel = (model)=>{
-return `DELETE FROM telefonesCli WHERE telefone = ${model.telefone}`;
+return `DELETE FROM telefonesFunc WHERE telefone = ${model.telefone}`;
 }
 
 const toUpdate = (model) => {
-return `UPDATE telefonesCli SET telefone = ${model.telefone}, telefone = ${model.telefone} where id_cliente = ${model.id_cliente}`;
+return `UPDATE telefonesFunc SET telefone = ${model.telefone}, telefone = ${model.telefone} where id_func = ${model.id_func}`;
 }
 
 module.exports = {
