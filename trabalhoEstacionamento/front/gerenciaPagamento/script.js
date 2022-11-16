@@ -10,10 +10,11 @@ fetch("http://localhost:3000/pagamentos")
 
 function listaPagamentos() {
     pagamento.forEach(info => {
-        valorHora = parseInt(info.hora[1] * minutoHora)
-        v = parseInt(info.hora[3])
-        x = parseInt(info.hora[4])
-        precoTotal = (valorHora + v + x) * valorMinuto
+        
+        let valorHora = parseInt(info.hora[1] * minutoHora)
+        let minutoDecimal = parseInt(info.hora[3])
+        let minuto = parseInt(info.hora[4])
+        precoTotal = (valorHora + (minutoDecimal*10) + minuto) * valorMinuto
         console.log(precoTotal)
     })
 }

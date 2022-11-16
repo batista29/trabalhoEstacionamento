@@ -8,7 +8,8 @@ const TelefonesFuncController = require("./controllers/TelefonesFuncController")
 const CarrosController = require("./controllers/CarrosController");
 const FuncController = require("./controllers/FuncionariosController");
 const Pagamentos = require("./controllers/PagamentoController");
-
+const Vagas = require("./controllers/VagasController");
+const Registros = require("./controllers/RegistrosController");
 //falta controller funcionario
 
 router.get("/clientes", ClientesController.listarClientes);
@@ -37,5 +38,13 @@ router.post("/funcionarios", FuncController.cadastrarFuncionarios);
 router.put("/funcionarios", FuncController.editarFuncionarios);
 
 router.get("/pagamentos", Pagamentos.listarPagamento);
+
+router.get("/vagas", Vagas.listarVagas);
+router.put("/vagas", Vagas.editarVagas);
+router.post("/vagas", Vagas.cadastrarVagas);
+
+router.get("/registros", Registros.listarRegistros);
+router.put("/registros", Registros.editarRegistros);
+router.post("/registros", Registros.cadastrarRegistros);
 
 module.exports = router;
