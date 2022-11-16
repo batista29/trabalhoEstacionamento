@@ -14,7 +14,6 @@ function listaDeClientes() {
 
         var date = new Date(info.data_nasc); 
         let dataFromatada = date.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
-        console.log(dataFromatada)
 
         var lista = lancamento.cloneNode(true);
         lista.classList.remove("model")

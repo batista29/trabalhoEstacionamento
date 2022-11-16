@@ -122,11 +122,12 @@ create table registro(
 
 INSERT INTO registro values(1,2, "20:00:00", "21:00:00", "2003-03-03");
 INSERT INTO registro values(1,1, "20:00:00", "21:00:00", "2003-03-03");
+INSERT INTO registro values(1,1, "20:00:00", "21:00:00", "2003-03-03");
 -- subtime para subtrair a hora
 SELECT SUBTIME("21:00:00","20:00:00");
 
 drop view if exists vw_valorHora;
 CREATE VIEW vw_valorHora AS
-SELECT r.id_carro, SUBTIME(r.hora_saida,r.hora_entrada) as "HORA", r.data, v.id_vaga, v.ocupada
+SELECT r.id_carro, SUBTIME(r.hora_saida,r.hora_entrada) as "hora", r.data, v.id_vaga, v.ocupada
 FROM registro r INNER JOIN vagas v on r.id_carro = v.id_carro;
 select * from vw_valorHora;

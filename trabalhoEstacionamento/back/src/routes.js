@@ -7,6 +7,7 @@ const TelefonesCliController = require("./controllers/TelefonesCliController");
 const TelefonesFuncController = require("./controllers/TelefonesFuncController");
 const CarrosController = require("./controllers/CarrosController");
 const FuncController = require("./controllers/FuncionariosController");
+const Pagamentos = require("./controllers/PagamentoController");
 
 //falta controller funcionario
 
@@ -34,5 +35,7 @@ router.get("/funcionarios", FuncController.listarFuncionarios);
 router.delete("/funcionarios", FuncController.excluirFuncionarios);
 router.post("/funcionarios", FuncController.cadastrarFuncionarios);
 router.put("/funcionarios", FuncController.editarFuncionarios);
+
+router.get("/pagamentos", Pagamentos.listarPagamento);
 
 module.exports = router;
