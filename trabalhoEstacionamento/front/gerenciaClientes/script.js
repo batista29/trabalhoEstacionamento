@@ -5,8 +5,8 @@ var clientes = []
 
 var estacionamento = [];
 fetch("http://localhost:3000/clientes")
-.then(resp => {return resp.json()})
-.then(lancamento => {
+    .then(resp => { return resp.json() })
+    .then(lancamento => {
         estacionamento = lancamento;
         listaDeClientes();
     });
@@ -14,8 +14,8 @@ fetch("http://localhost:3000/clientes")
 function listaDeClientes() {
     estacionamento.forEach(info => {
 
-        var date = new Date(info.data_nasc); 
-        let dataFromatada = date.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+        var date = new Date(info.data_nasc);
+        let dataFromatada = date.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
 
         var lista = lancamento.cloneNode(true);
         lista.classList.remove("model")
@@ -34,11 +34,11 @@ function listaDeClientes() {
 }
 var modal = document.querySelector(".modal");
 
-function abrirModal (){
-      modal.classList.toggle("model");
+function abrirModal() {
+    modal.classList.toggle("model");
 }
 
-function cadastrar(){
+function cadastrar() {
     let nome = document.querySelector(".nome").value;
     let email = document.querySelector(".email").value;
     let data = document.querySelector(".data").value;
@@ -51,14 +51,14 @@ function cadastrar(){
 
     let options = JSON.stringify({
         "nome_cli": nome,
-		"email": email,
-		"data_nasci": data,
-		"cpf": cpf,
-		"bairro": bairro,
+        "email": email,
+        "data_nasci": data,
+        "cpf": cpf,
+        "bairro": bairro,
         "rua": rua,
-		"cep": cep,
-		"complemento": complemento,
-		"municipio": municipio
+        "cep": cep,
+        "complemento": complemento,
+        "municipio": municipio
     });
 
     fetch("http://localhost:3000/clientes", {
@@ -68,12 +68,12 @@ function cadastrar(){
         },
         "body": options
     })
-    .then(resp=> {return resp})
-    .then(resp => { 
+        .then(resp => { return resp })
+        .then(resp => {
             alert("Cliente cadastrado com sucesso!");
             window.location.reload();
             abrirModal();
-    })
+        })
 }
 
 function deletarUser(e) {
@@ -82,25 +82,26 @@ function deletarUser(e) {
 
     let data = {
         "id_cliente": idCli
-  };
-  fetch("http://localhost:3000/clientes", {
-      "method":"DELETE",
-      "headers": {
-          "Content-Type":"application/json"
-      },
-      "body":JSON.stringify(data)
-  })
-  .then(res => { return res.json() })
-      .then(resp => {
-          if (resp.id_cliente !== undefined) {
-            alert("a")
-        }
-      })
-   }
+    };
+    fetch("http://localhost:3000/clientes", {
+        "method": "DELETE",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(data)
+    })
+        .then(res => { return res.json() })
+        .then(resp => {
+            if (resp.id_cliente !== undefined) {
+                alert("Cliente: " + resp.id_cliente + " Excluido com sucesso");
+                window.location.reload();
+            }
+        })
+}
 
-   var tela = document.querySelector(".tela");
+var tela = document.querySelector(".tela");
 
-function abrirModal2 (e){
+function abrirModal2(e) {
     tela.classList.toggle("tela2");
 
     var idCli2 = e.parentNode.parentNode.querySelector("#idCli").innerHTML
@@ -108,21 +109,21 @@ function abrirModal2 (e){
     console.log(idCli2);
 }
 
-function fecharModal(){
+function fecharModal() {
     tela.classList.toggle("tela2");
 }
 
-function usual(e){
+function usual(e) {
     fetch("http://localhost:3000/clientes")
-    .then(resp => {return resp.json()})
-    .then(data => {
-        clientes = data;
-        abrirModal2(e);
-    });
+        .then(resp => { return resp.json() })
+        .then(data => {
+            clientes = data;
+            abrirModal2(e);
+        });
 }
 
 
-   function atualizar(){
+function atualizar() {
 
     let nome = document.querySelector("#nome").innerHTML;
     let email = document.querySelector("#email").innerHTML;
@@ -136,14 +137,14 @@ function usual(e){
 
     let options = JSON.stringify({
         "nome_cli": nome,
-		"email": email,
-		"data_nasci": data,
-		"cpf": cpf,
-		"bairro": bairro,
+        "email": email,
+        "data_nasci": data,
+        "cpf": cpf,
+        "bairro": bairro,
         "rua": rua,
-		"cep": cep,
-		"complemento": complemento,
-		"municipio": municipio
+        "cep": cep,
+        "complemento": complemento,
+        "municipio": municipio
     });
 
     fetch("http://localhost:3000/clientes", {
@@ -153,10 +154,10 @@ function usual(e){
         },
         "body": options
     })
-    .then(resp=> {return resp})
-    .then(resp => { 
+        .then(resp => { return resp })
+        .then(resp => {
             alert("Cliente ATUALIZADO com sucesso!");
             window.location.reload();
             fecharModal();
-    })
+        })
 }
