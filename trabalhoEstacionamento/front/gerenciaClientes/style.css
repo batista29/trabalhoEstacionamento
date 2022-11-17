@@ -13,7 +13,7 @@ main{
     height: 100%;
 
 }
-.model{
+.model, .tela2{
     display: none;
     visibility: hidden;
 }
@@ -161,7 +161,7 @@ label{
     padding: 8px;
 }
 
-.modal{
+.modal, .tela{
     align-items: center;
     justify-content: center;
     display: flex;
@@ -172,7 +172,7 @@ label{
     top: 0;
     
 }
-.cadastro{
+.cadastro, .atualizar{
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -226,4 +226,10 @@ label{
     margin: 0px 10px 0px 0px;
     border-radius: 5px;
     padding: 10px 15px;
+}
+
+
+.botoes > button:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
+    background-color:#b54ac5;
 }
