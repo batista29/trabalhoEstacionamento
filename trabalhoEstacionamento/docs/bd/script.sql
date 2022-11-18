@@ -57,35 +57,35 @@ create table carros(
 );
 
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/clientes.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesCli.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesCli.csv'
 INTO TABLE telefonesCli
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/carros.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/carros.csv'
 INTO TABLE carros
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/funcionarios.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/funcionarios.csv'
 INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/User/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesFunc.csv'
+LOAD DATA INFILE 'C:/Users/SUPORTE/Desktop/trabalhoEstacionamento/trabalhoEstacionamento/docs/bd/telefonesFunc.csv'
 INTO TABLE telefonesFunc
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
