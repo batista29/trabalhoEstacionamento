@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Gerenciamento de preços</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <aside>
+                <nav>
+                    <h1 class="logo">Penguion</h1>
+                    <ul>
+                        <li><a href="../gerenciaPagamento/index.html"><i class="fa-solid fa-house"></i>Central</a></li>
+                        <li><a href="../gerenciaClientes/index.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
+                        <li><a href="../gerenciamentoCarros/index.html"><i class='bx bxs-car'></i>Carros</a></li>
+                        <li><a href="../gerenciaFuncionarios/index.html"><i
+                                    class="fa-solid fa-user-gear"></i>Funcionários</a></li>
+                        <li><a href="../"><i class='bx bx-cog'></i>Configurações</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </header>
+        <main>
+            <h1>Lista de carros cadastrados no sistema</h1>
+            <div class="cont-func">
+                <div class="itens-cont-func">
+                    <button onclick= "abrirModal()" class="btnfunc">Novo Carro<i class="fa-solid fa-user-plus"></i></button>
+                    <div class="filtro-cont-func">
+                        <input type="text" placeholder="Pesquise pelo nome">
+                        <button class="btnPesquisar"><i class='bx bx-search-alt-2' ></i></button>
+                    </div>
+                    <div class="total">
+                        <p>Total de carros: <b> -</b> </p>
+                        <label for=""></label>
+                    </div>     
+                </div>
+            </div>
+        <table>
+            <thead>
+                <tr class="cont-title-table">
+                    <th>Id Cliente</th>
+                    <th>id Carro</th>
+                    <th>Placa</th>
+                    <th>Tipo Nasci</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Cor</th>
+                    <th>Descrição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody class="lista-carros">
+                <tr class="linhamodelo model">
+                    <td id="idCli"></td>
+                    <td id="idCarro"></td>
+                    <td id="placa"></td>
+                    <td id="tipo"></td>
+                    <td id="marca"></td>
+                    <td id="modelo"></td>
+                    <td id="cor"></td>
+                    <td id="descricao"></td>
+                    <td id="acoes"><i onclick="deletarUser(this)"class='bx bx-trash'></i><i onclick="usual(this)" class='bx bxs-edit'></i></td>
+                </tr>
+            </tbody>
+
+        </table>
+        </main>
+        <div class="modal model">
+            <div class="cadastro">
+                <div class="dados">
+                    <div class="itens">
+                        <p>Id Cliente*</p>
+                        <input class="idCli" type="text" placeholder="00">
+                    </div>
+                    <div class="itens">
+                        <p>Placa*</p>
+                        <input class="placaCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Tipo*</p>
+                        <input class="tipoCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Marca*</p>
+                        <input class="marcaCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Modelo*</p>
+                        <input class="modeloCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Cor*</p>
+                        <input class="corCar" type="text" placeholder="Prata">
+                    </div>
+                    <div class="itens">
+                        <p>Descrição</p>
+                        <input class="desc" type="text" placeholder="Amassado do lado direito">
+                    </div>
+                    <div class="botoes">
+                        <button onclick="cadastrar()">Cadastrar</button>
+                        <button onclick="abrirModal()">Voltar</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="tela tela2">
+            <div class="atualizar">
+                <div class="dados">
+                    <div class="itens">
+                        <p>Id Cliente*</p>
+                        <input id="idCli" type="text" placeholder="00">
+                    </div>
+                    <div class="itens">
+                        <p>Placa*</p>
+                        <input id="placaCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Tipo*</p>
+                        <input id="tipoCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Marca*</p>
+                        <input id="marcaCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Modelo*</p>
+                        <input id="modeloCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Cor*</p>
+                        <input id="corCar" type="text" placeholder="">
+                    </div>
+                    <div class="itens">
+                        <p>Descrição</p>
+                        <input id="desc" type="text" placeholder="">
+                    </div>
+                    <div class="botoes">
+                        <button onclick="atualizar()">Salvar</button>
+                        <button onclick="fecharModal()">Voltar</button>
+                    </div>
+                </div>
+               
+                
+            </div>
+        </div>
+    
+
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/4c95932411.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="script.js"></script>
+
