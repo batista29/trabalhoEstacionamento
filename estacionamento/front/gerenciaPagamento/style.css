@@ -1,0 +1,48 @@
+@import url('../global/estrutura.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+body{
+    font-family: 'Poppins';
+}
+
+h1{
+    color:rgb(128, 45, 141);
+    text-align:center;
+}
+main{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+.model{
+    display: none;
+    visibility: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2%;
+}
+
+td{
+    font-family:  'Poppins';
+    font-size: 14px;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.cont-title-table{
+    background-color: rgb(128, 45, 141);
+}
+th{
+    border-bottom: 1px solid #CCCCCC;
+    padding: 8px; 
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+
+}

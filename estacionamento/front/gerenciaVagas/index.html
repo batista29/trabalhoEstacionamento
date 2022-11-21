@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Gerenciamento de preços</title>
+</head>
+
+<body onLoad="carregarVagas()">
+    <div class="container">
+        <header>
+            <aside>
+                <nav>
+                    <h1 class="logo">Penguion</h1>
+                    <ul>
+                        <li><a href="../gerenciaVagas/index.html"><i class="fa-solid fa-house"></i>Central</a></li>
+                        <li><a href="../gerenciaClientes/index.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
+                        <li><a href="../gerenciamentoCarros/index.html"><i class='bx bxs-car'></i>Veículos</a></li>
+                        <li><a href="../gerenciaFuncionarios/index.html"><i
+                                    class="fa-solid fa-user-gear"></i>Funcionários</a></li>
+                        <li><a href="../gerenciaPagamento/index.html"><i class='bx bxs-wallet'></i>Pagamentos</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </header>
+
+        <div class="painel">
+            <div id="titulo">
+                <h1>Central do Estacionamento</h1>
+                <button onclick="abrirModal2()" class="addCli">VAGA +</button>
+            </div>
+            <div class="cards">
+                <div class="vaga modelo">
+                    <p class="id"></p>
+                    <div class="primeira">
+                        <div class="cli">
+                            <p><b>Cliente</b></p>
+                            <span class="id_vaga_cli"></span>
+                            <span class="nome"></span>
+                        </div>
+                        <div class="contato">
+                            <p><b>Contato</b></p>
+                            <span class="telefone">Tel:</span>
+                        </div>
+                    </div>
+                       <div class="car">
+                        <p><b>Veículo</b></p>
+                        <div>
+                            <span class="tipoCar"></span>
+                            <span class="modeloCar"></span>
+                        </div>
+                        <span class="placa">Placa: </span>
+                        <span class="descricao">Descrição: </span>
+                       </div>
+                        
+
+                </div>
+            </div>
+        </div>
+        <div class="tela tela2">
+            <div class="tela3">
+                <div class="itens">
+                    <p>Id Cliente*</p>
+                    <input class="idCliente" type="text" placeholder="">
+                </div>
+    
+                <div class="itens">
+                    <p>Id Carro*</p>
+                    <input class="idCarro" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Id Vaga*</p>
+                    <input class="idVaga" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Hora Entrada*</p>
+                    <input class="horaEn" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Hora Saida*</p>
+                    <input class="horaSai" type="text" placeholder="">
+                </div>
+                <div class="itens">
+                    <p>Data*</p>
+                    <input class="data" type="text" placeholder="">
+                </div>
+                <div class="botoes">
+                    <button onclick="cadRegistro()">Cadastrar</button>
+                    <button onclick="abrirModal2()">Voltar</button>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/4c95932411.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Gerenciamento de pagamentos</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <aside>
+                <nav>
+                    <h1 class="logo">Penguion</h1>
+                    <ul>
+                        <li><a href="../gerenciaVagas/index.html"><i class="fa-solid fa-house"></i>Central</a></li>
+                        <li><a href="../gerenciaClientes/index.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
+                        <li><a href="../gerenciamentoCarros/index.html"><i class='bx bxs-car'></i>Veículos</a></li>
+                        <li><a href="../gerenciaFuncionarios/index.html"><i
+                                    class="fa-solid fa-user-gear"></i>Funcionários</a></li>
+                        <li><a href="../gerenciaPagamento/index.html"><i class='bx bxs-wallet'></i>Pagamentos</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </header>
+        <main>
+            <h1>Registro de pagamentos do sistema</h1>
+            <table>
+                <thead>
+                    <tr class="cont-title-table">
+                        <th>Cliente</th>
+                        <th>Carro</th>
+                        <th>Hora</th>
+                        <th>Data</th>
+                        <th>Id Vaga</th>
+                        
+                        <th>Valor Pago</th>
+                    </tr>
+                </thead>
+                <tbody class="lista-hora">
+                    <tr class="linhamodelo model">
+                        <td id="nomeCli"></td>
+                        <td id="idCarro"></td>
+                        <td id="hora"></td>
+                        <td id="data"></td>
+                        <td id="idVaga"></td>
+                        
+                        <td id="pago">-</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/4c95932411.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="script.js"></script>
+</html>
